@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
+
   def index
-    redis = Redis.new
-    redis.set('a', 1)
-    @a = redis.get('a')
+    # REDIS.set('b', 2)
+    # @a = REDIS.get('b')
   end
+
 end
