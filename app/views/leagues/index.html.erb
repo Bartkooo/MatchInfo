@@ -1,0 +1,6 @@
+<h1>Leagues</h1>
+<% JSON.parse(LEAGUES.read_body)['response'].each do |league| %>
+  <div>
+    <%= league['league']['name'] %>
+  </div>
+<% end %>
