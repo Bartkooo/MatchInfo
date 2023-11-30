@@ -1,0 +1,7 @@
+<h1>Teams</h1>
+<%= link_to 'home', root_path %>
+<% JSON.parse(TEAMS.read_body)['response'].each do |team| %>
+  <div>
+    <%= team['team']['name'] %>
+  </div>
+<% end %>
