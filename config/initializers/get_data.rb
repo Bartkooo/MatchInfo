@@ -5,8 +5,6 @@ require 'redis'
 
 REDIS = Redis.new
 
-url_leagues = URI("https://v3.football.api-sports.io/leagues")
-
 def get_data(url)
   http = Net::HTTP.new(url.host, url.port)
   http.use_ssl = true
@@ -19,6 +17,9 @@ def get_data(url)
   http.request(request)
 end
 
-leagues = get_data(url_leagues).read_body
+if !REDIS.exists?("leagues")
+  url_leagues = URI("https://v3.football.api-sports.io/leagues")
+  leagues = get_data(url_leagues).read_body
 
-REDIS.set('leagues', leagues)
+  REDIS.set('leagues', leagues)
+end
