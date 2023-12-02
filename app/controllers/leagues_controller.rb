@@ -5,6 +5,7 @@ class LeaguesController < ApplicationController
   end
 
   def show
+    @league_name = params[:name]
     @id = params[:id]
     url_teams = URI("https://v3.football.api-sports.io/teams?league=#{@id}&season=2023")
 
