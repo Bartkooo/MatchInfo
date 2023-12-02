@@ -1,7 +1,21 @@
 <h1><%= @league_name %></h1>
 <%= link_to 'Back to leagues', leagues_path %>
+<h2>Teams</h2>
 <% @teams.each do |team| %>
   <div>
     <%= team['team']['name'] %>
+  </div>
+<% end %>
+
+<h2>Matches</h2>
+<% @matches.each do |match| %>
+  <div>
+    Date: <%= Date.parse(match['fixture']['date']).strftime('%d %B %Y') %>
+  </div>
+  <div>
+    Home: <%= match['teams']['home']['name'] %>
+  </div>
+  <div>
+    Away: <%= match['teams']['away']['name'] %>
   </div>
 <% end %>
