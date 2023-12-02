@@ -2,6 +2,6 @@
 <%= link_to 'home', root_path %>
 <%= @leagues.each do |league| %>
   <div>
-    <%= league['league']['name'] %>
+    <%= link_to league['league']['name'], league_path(league['league']['id']) %>
   </div>
 <% end %>

@@ -1,5 +1,5 @@
-<h1>Teams</h1>
-<%= link_to 'home', root_path %>
+<%= link_to 'Back to leagues', leagues_path %>
+<%= @id %>
 <% @teams.each do |team| %>
   <div>
     <%= team['team']['name'] %>
