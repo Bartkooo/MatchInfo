@@ -1,4 +1,5 @@
 class LeaguesController < ApplicationController
+  before_action :set_redis, only: [:index, :show]
   before_action :set_leagues, only: [:index, :show]
 
   def index
@@ -24,6 +25,10 @@ class LeaguesController < ApplicationController
   end
 
   private
+
+  def set_redis
+    REDIS.select(1)
+  end
 
   def set_leagues
     @leagues = JSON.parse(REDIS.get('leagues'))['response']

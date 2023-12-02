@@ -3,7 +3,7 @@ require 'net/http'
 require 'openssl'
 require 'redis'
 
-REDIS = Redis.new
+REDIS = Redis.new(host: "127.0.0.1", port: 6379, db: 1)
 
 def get_data(url)
   http = Net::HTTP.new(url.host, url.port)
