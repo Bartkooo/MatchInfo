@@ -1,2 +1,24 @@
-<h1>Teams#show</h1>
-<p>Find me in app/views/teams/show.html.erb</p>
+<div>
+  <div style='display: flex; align-items: center; justify-content: center;'>
+    <div>
+      <%= image_tag "#{@team[0]['team']['logo']}", crossorigin:"anonymous" %>
+    </div>
+    <h1 style='font-size: 7em;'><%= @team_name %></h1>
+  </div>
+  <div style='display: flex; flex-direction: column; align-items: center;'>
+    <div>
+      <div>Country: <%= @team[0]['team']['country'] %></div>
+      <div>Founded: <%= @team[0]['team']['founded'] %></div>
+    </div>
+    <div style='border-top: 1px solid black; margin-top: 3rem;'>
+      <h1 style='text-align: center;'>Stadium</h1>
+      <%= image_tag "#{@team[0]['venue']['image']}", crossorigin:"anonymous" %>
+      <div style='text-align: center;'>
+        <div>Name: <%= @team[0]['venue']['name'] %></div>
+        <div>Address: <%= @team[0]['venue']['address'] %>, <%= @team[0]['venue']['city'] %></div>
+        <div>Capacity: <%= @team[0]['venue']['capacity'] %></div>
+      </div>
+    </div>
+  </div>
+</div>
+

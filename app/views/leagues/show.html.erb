@@ -4,6 +4,7 @@
 <% @teams.each do |team| %>
   <div>
     <%= team['team']['name'] %>
+    <%= link_to 'More', team_path(team_id: team['team']['id'], team_name: team['team']['name']) %>
   </div>
 <% end %>
 
