@@ -1,7 +1,9 @@
-<h1>Leagues</h1>
-<%= link_to 'home', root_path %>
-<%= @leagues.each do |league| %>
-  <div>
-    <%= link_to league['league']['name'], league_path(id: league['league']['id'], name: league['league']['name']) %>
-  </div>
-<% end %>
+<h1 style='text-align: center; font-size: 7em;'>Leagues</h1>
+
+<div style='display: grid; grid-template-columns: repeat(auto-fill,minmax(20rem, 1fr));'>
+  <% @leagues.each do |league| %>
+    <div>
+      <%= link_to league['league']['name'], league_path(id: league['league']['id'], name: league['league']['name']), style:'text-decoration: none; color: black;' %>
+    </div>
+  <% end %>
+</div>
